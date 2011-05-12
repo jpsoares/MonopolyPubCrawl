@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World, SimpleActivity!</string>
+    <string name="app_name">Monopoly Pub Crawl</string>
+    <string name="showmap">Show map</string>
+</resources>
