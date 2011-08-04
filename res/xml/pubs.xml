@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pubs>
+	<pub name="Test pub1" directions="Directions to pub">
+		<location longitude="0" latitude="0" />
+		<images>
+			<image path="pathtoimage" description="description" />
+		</images>
+	</pub>
+	<pub name="Test pub2" directions="Directions to pub2">
+		<location longitude="0" latitude="0" />
+		<images>
+			<image path="pathtoimage" description="description" />
+		</images>
+	</pub>
+</pubs>
