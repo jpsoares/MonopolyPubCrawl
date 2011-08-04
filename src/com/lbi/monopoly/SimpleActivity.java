@@ -1,9 +1,13 @@
 package com.lbi.monopoly;
 
+import java.util.List;
+
 import com.google.android.maps.GeoPoint;
 import com.google.android.maps.MapActivity;
 import com.google.android.maps.MapController;
 import com.google.android.maps.MapView;
+import com.lbi.monopoly.model.Pub;
+import com.lbi.monopoly.parser.MonopolyParser;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -47,6 +51,16 @@ public class SimpleActivity extends MapActivity {
 
 			}
 		});
+		
+		loadPubs();
+	}
+
+	private void loadPubs() {
+		MonopolyParser parser = new MonopolyParser("https://raw.github.com/jpsoares/MonopolyPubCrawl/master/res/xml/pubs.xml");
+		List<Pub> pubs = parser.parse();
+		for(Pub pub : pubs){
+			System.out.println(pub.getName());
+		}
 	}
 
 	private String getPubDirections() {

@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.xmlpull.v1.XmlPullParser;
 
+import com.lbi.monopoly.model.Image;
 import com.lbi.monopoly.model.Location;
 import com.lbi.monopoly.model.Pub;
 
@@ -50,16 +51,28 @@ public class MonopolyParser extends BaseFeedParser {
 					name = parser.getName();
 					if (name.equalsIgnoreCase(PUB)) {
 						currentMessage = new Pub();
+						currentMessage.setName(parser.getAttributeValue("",
+								PUB_NAME));
 					} else if (currentMessage != null) {
-						if (name.equalsIgnoreCase(PUB_NAME)) {
-							currentMessage.setName(parser.nextText());
-						} else if (name.equalsIgnoreCase(PUB_LOCATION)) {
-							currentMessage.setLocation(new Location());
-							
-						} else if (name.equalsIgnoreCase(PUB_CHECKIN_DATE)) {
-							currentMessage.setCheckinDate(new Date(parser.nextText()));
+						if (name.equalsIgnoreCase(PUB_LOCATION)) {
+							Location location = new Location();
+							location.setLatitude(Long.parseLong(parser
+									.getAttributeValue("", LOCATION_LATITUDE)));
+							location.setLongitude(Long.parseLong(parser
+									.getAttributeValue("", LOCATION_LONGITUDE)));
+							currentMessage.setLocation(location);
+
 						} else if (name.equalsIgnoreCase(PUB_DIRECTIONS)) {
 							currentMessage.setDirections((parser.nextText()));
+						} else if(name.equalsIgnoreCase(PUB_IMAGES)){
+							currentMessage.setImages(new ArrayList<Image>());
+						} else if (name.equalsIgnoreCase(PUB_IMAGE)){
+							String path = parser.getAttributeValue("", IMAGE_PATH);
+							String description = parser.getAttributeValue("", IMAGE_DESCRIPTION);
+							Image image = new Image();
+							image.setDescription(description);
+							image.setPath(path);
+							currentMessage.getImages().add(image);
 						}
 					}
 					break;

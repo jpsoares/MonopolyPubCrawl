@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+
+	<TextView android:id="@+id/name" android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:text="@string/name" />
+	<TextView android:id="@+id/pubname" android:layout_width="fill_parent"
+		android:layout_height="wrap_content" />
+	<View android:layout_width="fill_parent" android:layout_height="1dip"
+		android:background="#FFFFFF" />
+
+	<TextView android:id="@+id/directions" android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:text="@string/directions" />
+	<TextView android:id="@+id/pubdirections"
+		android:layout_width="fill_parent" android:layout_height="wrap_content" />
+	<View android:layout_width="fill_parent" android:layout_height="1dip"
+		android:background="#FFFFFF" />
+
+	<com.google.android.maps.MapView
+		xmlns:android="http://schemas.android.com/apk/res/android" android:id="@+id/mapview"
+		android:layout_width="fill_parent" android:layout_height="200dip"
+		android:clickable="true" android:apiKey="0Ti8Po7EbKQR_NLmzjsp_CA830bkG5Vm74hEzFg"
+		android:background="@drawable/bg_shape" />
+
+
+	<Button android:id="@+id/showmap" android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:text="@string/showmap" />
+</LinearLayout>

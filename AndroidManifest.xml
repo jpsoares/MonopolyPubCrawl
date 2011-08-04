@@ -13,7 +13,7 @@
 
 		<uses-library android:name="com.google.android.maps" />
 	</application>
-	<uses-sdk android:minSdkVersion="7" />
+	<uses-sdk android:minSdkVersion="4" />
 
 
 
