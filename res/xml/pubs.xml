@@ -7,7 +7,8 @@
 			<image path="pathtoimage" description="description" />
 		</images>
 	</pub>
-	<pub name="Test pub2" directions="Directions to pub2">
+	<pub name="Test pub2">
+		<directions>directions to pub 2</directions>
 		<location longitude="0" latitude="0" />
 		<images>
 			<image path="pathtoimage" description="description" />
