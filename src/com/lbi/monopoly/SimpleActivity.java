@@ -6,6 +6,7 @@ import com.google.android.maps.GeoPoint;
 import com.google.android.maps.MapActivity;
 import com.google.android.maps.MapController;
 import com.google.android.maps.MapView;
+import com.lbi.monopoly.activities.PubListActivity;
 import com.lbi.monopoly.model.Pub;
 import com.lbi.monopoly.parser.MonopolyParser;
 
@@ -52,15 +53,20 @@ public class SimpleActivity extends MapActivity {
 			}
 		});
 		
-		loadPubs();
+		Button showListButton = (Button) findViewById(R.id.show_list);
+		showListButton.setOnClickListener(new OnClickListener() {
+			
+			public void onClick(View arg0) {
+				Intent i = new Intent(SimpleActivity.this, PubListActivity.class);
+				SimpleActivity.this.startActivity(i);
+				
+			}
+		});
 	}
 
-	private void loadPubs() {
+	private List<Pub> loadPubs() {
 		MonopolyParser parser = new MonopolyParser("https://raw.github.com/jpsoares/MonopolyPubCrawl/master/res/xml/pubs.xml");
-		List<Pub> pubs = parser.parse();
-		for(Pub pub : pubs){
-			System.out.println(pub.getName());
-		}
+		return parser.parse();
 	}
 
 	private String getPubDirections() {
