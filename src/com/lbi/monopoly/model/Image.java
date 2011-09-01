@@ -1,6 +1,12 @@
 package com.lbi.monopoly.model;
 
-public class Image {
+import java.io.Serializable;
+
+public class Image implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 948851026653619435L;
 	private String path;
 	private String description;
 

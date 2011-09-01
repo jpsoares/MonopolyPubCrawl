@@ -3,11 +3,14 @@ package com.lbi.monopoly.adapters;
 import java.util.List;
 
 import com.lbi.monopoly.R;
+import com.lbi.monopoly.SimpleActivity;
 import com.lbi.monopoly.model.Pub;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
@@ -48,7 +51,18 @@ public class PubAdapter extends ArrayAdapter<Pub> {
 			if (pubDistance != null) {
 				pubDistance.setText("0 meters");
 			}
+			
+			v.setOnClickListener(new OnClickListener() {
+				
+				public void onClick(View v) {
+					Intent i = new Intent(v.getContext(), SimpleActivity.class);
+					i.putExtra("pub", pub);
+					
+					v.getContext().startActivity(i);
+				}
+			});
 		}
+		
 	}
 
 }

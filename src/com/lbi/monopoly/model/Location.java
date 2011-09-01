@@ -1,6 +1,12 @@
 package com.lbi.monopoly.model;
 
-public class Location {
+import java.io.Serializable;
+
+public class Location implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -3521147617081278322L;
 	private long longitude;
 	private long latitude;
 

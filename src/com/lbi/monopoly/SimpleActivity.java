@@ -20,25 +20,27 @@ import android.widget.TextView;
 
 public class SimpleActivity extends MapActivity {
 
-	private int latitude = 0;
-
-	private int longitude = 0;
+	private Pub pub;
 
 	/** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+
+		this.pub = (Pub) getIntent().getExtras().get("pub");
+
 		setContentView(R.layout.main);
 
 		TextView pubname = (TextView) findViewById(R.id.pubname);
-		pubname.setText(getPubName());
+		pubname.setText(this.pub.getName());
 
 		TextView pubdirections = (TextView) findViewById(R.id.pubdirections);
-		pubdirections.setText(getPubDirections());
+		pubdirections.setText(this.pub.getDirections());
 
 		MapView mapview = (MapView) findViewById(R.id.mapview);
 
-		GeoPoint point = new GeoPoint(this.latitude, this.longitude);
+		GeoPoint point = new GeoPoint((int)this.pub.getLocation().getLatitude(),
+				(int)this.pub.getLocation().getLongitude());
 
 		MapController mapController = mapview.getController();
 		mapController.setCenter(point);
@@ -52,31 +54,23 @@ public class SimpleActivity extends MapActivity {
 
 			}
 		});
-		
+
 		Button showListButton = (Button) findViewById(R.id.show_list);
 		showListButton.setOnClickListener(new OnClickListener() {
-			
+
 			public void onClick(View arg0) {
-				Intent i = new Intent(SimpleActivity.this, PubListActivity.class);
+				Intent i = new Intent(SimpleActivity.this,
+						PubListActivity.class);
 				SimpleActivity.this.startActivity(i);
-				
+
 			}
 		});
 	}
 
 	private List<Pub> loadPubs() {
-		MonopolyParser parser = new MonopolyParser("https://raw.github.com/jpsoares/MonopolyPubCrawl/master/res/xml/pubs.xml");
+		MonopolyParser parser = new MonopolyParser(
+				"https://raw.github.com/jpsoares/MonopolyPubCrawl/master/res/xml/pubs.xml");
 		return parser.parse();
-	}
-
-	private String getPubDirections() {
-		// TODO Auto-generated method stub
-		return "Turn left, then turn right";
-	}
-
-	private String getPubName() {
-		// TODO Auto-generated method stub
-		return "Test pub";
 	}
 
 	@Override
