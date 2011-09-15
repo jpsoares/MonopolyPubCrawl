@@ -2,7 +2,7 @@
 <pubs>
 	<pub name="Ten Bells">
 		<directions>direction</directions>
-		<location longitude="-0.076904" latitude="38.364258" />
+		<location longitude="-76904" latitude="38364258" />
 		<images>
 			<image path="pathtoimage" description="description" />
 		</images>
