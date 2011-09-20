@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <pubs>
-	<pub name="Test pub1">
+	<pub name="Ten Bells">
 		<directions>direction</directions>
-		<location longitude="1" latitude="2" />
+		<location longitude="-74265" latitude="51518504" />
 		<images>
 			<image path="pathtoimage" description="description" />
 		</images>
