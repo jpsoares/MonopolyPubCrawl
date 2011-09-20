@@ -20,14 +20,9 @@
 	<com.google.android.maps.MapView
 		xmlns:android="http://schemas.android.com/apk/res/android" android:id="@+id/mapview"
 		android:layout_width="fill_parent" android:layout_height="200dip"
-		android:clickable="true" android:apiKey="0Ti8Po7EbKQR_NLmzjsp_CA830bkG5Vm74hEzFg"
+		android:clickable="true" android:apiKey="0Ti8Po7EbKQT5eIKi7V0I2JG3_Rbqjmt83aFxLA"
 		android:background="@drawable/bg_shape" />
-
-
-	<Button android:id="@+id/showmap" android:layout_width="wrap_content"
-		android:layout_height="wrap_content" android:text="@string/showmap" />
 		
-		
-	<Button android:id="@+id/show_list" android:layout_width="wrap_content"
-		android:layout_height="wrap_content" android:text="Show list" />
+	<Button android:id="@+id/checkin" android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:text="@string/checkin" />
 </LinearLayout>

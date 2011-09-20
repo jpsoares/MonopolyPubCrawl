@@ -5,4 +5,5 @@
     <string name="showmap">Show map</string>
     <string name="name">Name:</string>
     <string name="directions">Directions:</string>
+     <string name="checkin">Check-in</string>
 </resources>

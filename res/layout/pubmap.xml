@@ -5,6 +5,6 @@
 	<com.google.android.maps.MapView
 		xmlns:android="http://schemas.android.com/apk/res/android" android:id="@+id/mapview"
 		android:layout_width="fill_parent" android:layout_height="fill_parent"
-		android:clickable="true" android:apiKey="0Ti8Po7EbKQR_NLmzjsp_CA830bkG5Vm74hEzFg" 
+		android:clickable="true" android:apiKey="0Ti8Po7EbKQT5eIKi7V0I2JG3_Rbqjmt83aFxLA" 
 		android:background="@drawable/bg_shape" />
 </LinearLayout>
