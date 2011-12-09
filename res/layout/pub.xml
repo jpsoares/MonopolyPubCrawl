@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/backrepeat"
+    android:orientation="vertical" >
+
+    <include layout="@layout/mainnav" />
+
+    <com.lbi.monopoly.views.ImageViewRounded
+        android:id="@+id/pub_image"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginLeft="4px"
+        android:layout_marginRight="4px"
+        android:layout_marginTop="4px"
+        android:src="@drawable/pint" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingLeft="5dp" >
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/name" />
+
+        <TextView
+            android:id="@+id/pubname"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dip"
+        android:background="#FFFFFF" />
+
+    <TextView
+        android:id="@+id/directions"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/directions" />
+
+    <TextView
+        android:id="@+id/pubdirections"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dip"
+        android:background="#FFFFFF" />
+
+    <com.google.android.maps.MapView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/mapview"
+        android:layout_width="fill_parent"
+        android:layout_height="200dip"
+        android:apiKey="0Ti8Po7EbKQT5eIKi7V0I2JG3_Rbqjmt83aFxLA"
+        android:background="@drawable/bg_shape"
+        android:clickable="true" />
+
+    <Button
+        android:id="@+id/checkin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/checkin" />
+
+</LinearLayout>

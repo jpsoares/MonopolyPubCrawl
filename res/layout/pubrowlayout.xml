@@ -1,15 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	android:layout_width="wrap_content" android:layout_height="wrap_content">
-	<ImageView android:id="@+id/pub_image" android:layout_height="wrap_content"
-		android:layout_width="22px" android:layout_marginTop="4px"
-		android:layout_marginRight="4px" android:layout_marginLeft="4px"
-		android:src="@drawable/pint">
-	</ImageView>
-	<TextView android:layout_width="wrap_content"
-		android:layout_height="wrap_content" android:id="@+id/pub_name"
-		android:textSize="30px"></TextView>
-	<TextView 
-		android:layout_width="wrap_content" android:layout_height="wrap_content"
-		android:id="@+id/pub_distance" android:textSize="20px"></TextView>
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="10dp" >
+
+    <com.lbi.monopoly.views.ImageViewRounded android:id="@+id/pub_image"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginLeft="4px"
+        android:layout_marginRight="4px"
+        android:layout_marginTop="4px"
+        android:src="@drawable/pint" />
+    <!--<ImageView
+        android:id="@+id/pub_image"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginLeft="4px"
+        android:layout_marginRight="4px"
+        android:layout_marginTop="4px"
+        android:src="@drawable/pint" >
+    </ImageView>-->
+
+    <LinearLayout
+        android:layout_width="0dip"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:orientation="vertical" android:paddingLeft="5dp" >
+
+        <TextView
+            android:id="@+id/pub_name"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text"
+            android:textSize="14sp"
+            android:textStyle="bold" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/pub_distance"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text"
+            android:textSize="14sp" >
+        </TextView>
+    </LinearLayout>
+
 </LinearLayout>

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.lbi.monopoly.R;
+import com.lbi.monopoly.R.layout;
 import com.lbi.monopoly.adapters.PubAdapter;
 import com.lbi.monopoly.model.Pub;
 import com.lbi.monopoly.parser.PubLoader;
@@ -46,5 +47,7 @@ public class PubListActivity extends ListActivity {
 		
 		
 		this.setListAdapter(adapter);
+		
+		this.setContentView(R.layout.list);
 	}
 }
